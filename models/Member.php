@@ -30,10 +30,11 @@ class Member extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['firstname', 'lastname', 'email', 'tel'], 'required'],
+            [['firstname', 'lastname', 'email', 'birthday'], 'required'],
+            [['email'], 'email'],
             [['address'], 'string'],
             [['firstname', 'lastname', 'email'], 'string', 'max' => 100],
-            [['tel'], 'string', 'max' => 15],
+            [['tel'], 'number'],
         ];
     }
 
